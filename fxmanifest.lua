@@ -4,7 +4,7 @@ game		'gta5'
 
 name		'MapStyle'
 author		'FlookFlook#4188'
-description 'Maps with or without postal '
+description 'Maps with or without postal DNX-V1.21'
 version		'1.0.0'
 
 client_script 'client.lua'

@@ -12,6 +12,7 @@ end)
 
 local isPedOnFoot = false
 local isPedInVehicle = false
+local EnableCayoMiniMap = false
 
 Citizen.CreateThread(function()
     while true do
@@ -98,3 +99,14 @@ exports("togglePostal", togglePostal)
 RegisterCommand("postal", function()
     togglePostal()
 end, false)
+
+if EnableCayoMiniMap then
+    CreateThread(function()
+        while true do
+            SetRadarAsExteriorThisFrame()
+            local coords = vec(4700.0, -5145.0)
+            SetRadarAsInteriorThisFrame(`h4_fake_islandx`, coords.x, coords.y, 0, 0)
+            Wait(0)
+        end
+    end)
+end
